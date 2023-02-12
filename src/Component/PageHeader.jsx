@@ -8,6 +8,7 @@ import backgroundImage5 from "../Images/hum2.jpg"
 import backgroundImage6 from "../Images/hum3.jpeg"
 import backgroundImage7 from "../Images/iii.jpg"
 import backgroundImage8 from "../Images/image.jpg"
+import resume from "../../src/Docs/GauravResume.pdf"
 
 import Grid from '@mui/material/Grid';
 import Amination from './Animations/Amination';
@@ -41,8 +42,10 @@ function PageHeader() {
                             <Amination text={"Hi!"} color={"black"} fontSize={"4rem"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"1.5"} />
                             <Amination text={"I'm Gaurav Singh"} color={"black"} fontSize={"4rem"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"2"} />
                             <Amination text={aboutMe} color={"black"} fontSize={"1.3rem"} fontFamily={"italic"} fontWeight={""} lineHeight={"1"} />
-                        
-                            <Button style={{ color: "#111",background:"#fff", fontSize: "0.8rem", borderRadius: "5px",position:"inherit" ,marginTop:"-35%" }}>Download CV  <i class="fa-solid fa-down-to-line"></i></Button>
+                            <a href={resume} download="GauravResume.pdf" target='_blank'>
+
+                           <Button style={{ color: "#111",background:"#fff", fontSize: "0.8rem", borderRadius: "5px",position:"inherit" ,marginTop:"-45%" }}>Download CV  <i class="fa-solid fa-down-to-line"></i></Button>
+ </a>
                         </div>
                     </Grid>
 
