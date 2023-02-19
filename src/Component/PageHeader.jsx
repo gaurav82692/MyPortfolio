@@ -36,21 +36,23 @@ function PageHeader() {
                     <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
                         {/* <img style={{ marginLeft: "10%" }} src={GauravImage} alt="" /> */}
                     </Grid>
-                    <Grid item xl={8} lg={8} md={8} sm={12} xs={12} style={{ marginTop: "10%", fontSize: "20rem" }}>
+                    <Grid item xl={8} lg={8} md={8} sm={12} xs={12} style={{ marginTop: "5%", fontSize: "20rem" ,right:"10",bottom:"0"}}>
                         <Label />
                         <div style={{ marginTop: "25%" }}>
-                            <Amination text={"Hi!"} color={"black"} fontSize={"4rem"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"1.5"} />
-                            <Amination text={"I'm Gaurav Singh"} color={"black"} fontSize={"4rem"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"2"} />
-                            <Amination text={aboutMe} color={"black"} fontSize={"1.3rem"} fontFamily={"italic"} fontWeight={""} lineHeight={"1"} />
-                            <a href={resume} download="GauravResume.pdf" target='_blank'>
-
-                           <Button style={{ color: "#111",background:"#fff", fontSize: "0.8rem", borderRadius: "5px",position:"inherit" ,marginTop:"-45%" }}>Download CV  <i class="fa-solid fa-down-to-line"></i></Button>
- </a>
+                            <Amination text={"Hi!"} color={"black"} fontSize={"4vw"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"1.5"} />
+                            <Amination text={"I'm Gaurav Singh"} color={"black"} fontSize={"4vw"} fontFamily={"cursive"} fontWeight={"Bold"} lineHeight={"2"} />
+                            <Amination text={aboutMe} color={"black"} fontSize={"1.3vw"} fontFamily={"italic"} fontWeight={""} lineHeight={"1"} />
+                           
                         </div>
                     </Grid>
-
-
+                    <div style={{display:"flex",width:"100%",flexDirection:"row-reverse",justifyContent:"space-between"}}>
+                    <a href={resume} download="GauravResume.pdf" target='_blank'>
+                    <Button style={{ color: "#fff",background:"#98e39e", fontSize: "0.6rem", borderRadius: "5px",position:"absolute",border:"1px solid black",padding:"0%",width:"100px",right:"0",bottom:"0", marginRight:"10%"}}>Download CV  <i class="fa-solid fa-down-to-line"></i></Button></a>
+                    <Button/>
+                    </div>
+                 
                 </Grid>
+               
 
 
             </div>
