@@ -21,7 +21,11 @@ function WhatIdo() {
                 <div class="box  cyan">
                     <h2>Software Development</h2>
                     <p>Monitors activity to identify project roadblocks</p>
-                    <img className="img" src={Software} alt="" height={"90px"} />
+                    <img className="img" src={Software} alt="" style={{position:"relative",
+                        right:"25%",
+                        top:"-25px",
+                        width:"30%",
+                        height:"80%"}} />
                 </div>
 
                 <div class="box red">

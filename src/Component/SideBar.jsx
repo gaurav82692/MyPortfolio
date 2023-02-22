@@ -25,7 +25,9 @@ import MySkills from './PageContent/MySkills/MySkills';
 import Education from './PageContent/MyEducation/Education';
 import WorkExp from './PageContent/MyWorkExperience/WorkExp';
 import ContactMe from './PageContent/ContactMe/ContactMe';
-
+import { Routes,Route, Link ,Navigate} from "react-router-dom";
+import routes from "../Routes.js"
+import MainPage from './MainPage';
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -127,34 +129,43 @@ export default function SideBar() {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <div>
-                    <center>
-                        <img src={me} style={{ borderRadius: "50%", height: "20%", width: "70%" }} alt="" />
-
-                    </center>
-                </div>
+               
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
+
+                    {routes.map((prop, index) => (
+                        <Link to={prop.layout + prop.path}> 
+                        <ListItem key={prop} disablePadding>
+                        
+                         <ListItemButton>
                                 <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemText primary={prop.name} style={{color:"gray"}} />
                             </ListItemButton>
                         </ListItem>
+                        </Link>
+
                     ))}
                 </List>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <PageHeader />
-                <WhatIdo />
-                <MySkills />
-                <Education />
-                <WorkExp />
-                <ContactMe />
+                <Routes> 
+               {routes.map((prop,index)=>{
+                return <>
+                <Route
+                path="*"
+                element={<Navigate to="/admin/" replace={true} />}
+              />    
+                    <Route path={prop.layout + prop.path} element={prop.component} />
+                                 
+                </>
+               }) 
+            }
+            </Routes>
+
             </Main>
         </Box>
     );
